@@ -33,35 +33,35 @@ export default {
       current_user: null
     };
   },
-  // mounted() {
-  //   this.fetchMovies();
-  // },
-  // methods: {
-  //   async fetchMovies() {
-  //     const token = window.localStorage.getItem("auth");
-  //     return axios({
-  //       method: "get",
-  //       url: "/movies",
-  //       headers: {
-  //         Authorization: `JWT ${token}`,
-  //         "Content-Type": "application/json",
-  //       },
-  //     })
-  //       .then((response) => {
-  //         this.movies = response.data.movies;
-  //         this.current_user = response.data.current_user;
-  //       })
-  //       .catch(() => {});
-  //   },
-  // },
-  computed: {
-    movies(){
-      return this.$store.getters.fetchMovies;
-    }
+  mounted() {
+    this.fetchMovies();
   },
-  mounted(){
-    this.$store.dispatch("fetchMovies");
-  }
+  methods: {
+    async fetchMovies() {
+      const token = window.localStorage.getItem("auth");
+      return axios({
+        method: "get",
+        url: "/movies",
+        headers: {
+          Authorization: `JWT ${token}`,
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => {
+          this.movies = response.data.movies;
+          this.current_user = response.data.current_user;
+        })
+        .catch(() => {});
+    },
+  },
+  // computed: {
+  //   movies(){
+  //     return this.$store.getters.fetchMovies;
+  //   }
+  // },
+  // mounted(){
+  //   this.$store.dispatch("fetchMovies");
+  // }
 };
 </script>
 
