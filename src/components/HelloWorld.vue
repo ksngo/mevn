@@ -29,7 +29,6 @@ import axios from "axios";
 export default {
   data() {
     return {
-      movies: [],
       current_user: null
     };
   },

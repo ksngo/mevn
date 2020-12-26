@@ -12,7 +12,7 @@ import Vuetify from 'vuetify';
 import VueSwal from 'vue-swal';
 import App from './App';
 import router from './router';
-import {store} from './store/store'
+import { store } from './store/store';
 
 // eslint-disable-next-line
 Vue.use(BootstrapVue)
