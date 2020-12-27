@@ -25,8 +25,28 @@ add-> app.use(serveStatic(__dirname + "/dist"));
 
 npm run build
 
+# Tests
 
+0) trying out
+go to test_js folder; it will run test for add.spec.js file  inside test folder; from test_js folder, it will look into test folder by default.
+```mocha```
 
+1) controllers
+go to movie_rating_app folder
+```mocha test/unit/controllers/movies.spec.js```
+
+2) models
+go to movie_rating_app folder
+```mocha test/unit/specs/models/Movie.spec.js```
+
+3) e2e
+
+to start selenium server manually
+```npx selenium-standalone start -- -port 5555```
+
+set start_process property to false in nightwatch.conf.js to not start selenium automatically when run 'npm run e2e'
+Comment out line 30-42 inn test.js; line 38-40 have problems running tests.
+```npm run e2e```
 
 
 ## Build Setup

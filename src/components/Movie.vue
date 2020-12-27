@@ -11,7 +11,14 @@
             >
           </div>
         </v-card-title>
-        <h6 class="card-title" v-if="current_user" @click="rate">Rate this movie</h6>
+        <h6
+          class="card-title"
+          v-if="current_user"
+          @click="rate"
+          id="rate_movie"
+        >
+          Rate this movie
+        </h6>
         <v-card-text>
           {{ movie.description }}
         </v-card-text>
@@ -23,7 +30,7 @@
 /* eslint-disable */
 import axios from "axios";
 import StarRating from "vue-star-rating";
-import Vue from 'vue'
+import Vue from "vue";
 
 const wrapper = document.createElement("div");
 // shared state
@@ -50,11 +57,10 @@ How was your experience getting help with this issues?
 const component = new RatingComponent().$mount(wrapper);
 
 export default {
-  
   data() {
     return {
       movie: [],
-      current_user: true
+      current_user: true,
     };
   },
   mounted() {
