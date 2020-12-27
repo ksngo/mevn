@@ -5,7 +5,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const fs = require('fs');
 const session = require('express-session');
-//const config = require('./config/Config');
+const config = require('./config/Config');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const passportJWT = require('passport-jwt');
@@ -26,7 +26,7 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(session({
-    secret: SECRET,
+    secret: config.SECRET,
     resave: true,
     saveUninitialized: true,
     cookie: { httpOnly: false }
