@@ -37,7 +37,7 @@ go to movie_rating_app folder
 
 2) models
 go to movie_rating_app folder
-```mocha test/unit/specs/models/Movie.spec.js```
+```mocha test/unit/models/Movie.spec.js```
 
 3) e2e
 
